@@ -8,9 +8,19 @@ function List(list) {
 
     const [count, setCount] = useState(0)
 
+    const handleOnSubmit = (e) => {
+        e.preventDefault()
+        props.onSubmit(true)
+    }
+
     return (
         <div className="List">
-            <form></form>
+            <form onSubmit={handleOnSubmit}>
+                <h4>Enter Artist:</h4>
+                <input type="text" name="artist" className="submission" value={list.form.artist} onChange={list.handleChange}></input>
+            </form>
+            <button className='filter'>Most Popular</button>
+            <button className='filter'>Best Deals</button>
         </div>
     )
 }

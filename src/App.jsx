@@ -16,6 +16,16 @@ function App() {
 
   const [results, setResults] = useState([])
 
+  const [form, setForm] = useState({artist: ""})
+
+  const handleChange = (e) => {
+    const newForm = {};
+    const newValue = e.target.value
+    const key = e.target.name
+    newForm[key] = newValue
+    setForm({...form, ...newForm})
+  }
+
   useEffect(() => {
       axios.get(URL + API_KEY)
       .then(response => {
@@ -34,14 +44,19 @@ function App() {
 
   return (
     <div className="App">
-      
+
+      <h1>Showlyst</h1>
+      <h2>Upcoming Concerts in Buffalo, NY</h2>
+
       <div className='cards'>
         <Card title="Total Concerts" stat={total}/>
         <Card title="Average Ticket Price" stat={`$${average}`}/>
         <Card title="Ticket Price Range" stat={`$${lowest} to $${highest}`}/>
       </div>
 
-      <List />
+      <List form={form} handleChange={handleChange} />
+
+      <h2>Upcoming Concerts:</h2>
 
       {results.map((element, index) => (
           <div className='result'>

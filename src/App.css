@@ -1,17 +1,21 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  height: auto;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #9e2a2b;
+  color: #fff3b0;
 }
 
 .cards {
   display: flex;
+  justify-content: center;
 }
 
 .result {
-  background-color: #dda15e;
-  padding: 25px 50px;
+  background-color: #e09f3e;
+  padding: 5px 10px;
   margin: 25px;
   display: flex;
   flex-direction: column;
