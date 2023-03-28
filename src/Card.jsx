@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './Card.css'
 
-function Card() {
+function Card(card) {
   const [count, setCount] = useState(0)
 
   return (
     <div className="Card">
-      <h2 className='title'>title</h2>
-      <h3 className='stat'>stat</h3>
+      <h2 className='title'>{card.title}</h2>
+      <h3 className='stat'>{card.stat}</h3>
     </div>
   )
 }

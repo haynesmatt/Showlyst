@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import './List.css'
 
-function List() {
-  const [count, setCount] = useState(0)
+function List(list) {
 
-  return (
-    <div className="List">
-        <div className='result'>
-            <h2 className='artist'>artist</h2>
-            <h3 className='location'>location</h3>
-            <h3 className='ticket-price'>ticket-price</h3>
+    const API_KEY = import.meta.env.VITE_APP_API_KEY;
+    const URL = "https://api.seatgeek.com/2/events?venue.state=NY&venue.city=Buffalo&taxonomies.name=concert&client_id=" + API_KEY
+
+    const [count, setCount] = useState(0)
+
+    return (
+        <div className="List">
+            <form></form>
         </div>
-    </div>
-  )
+    )
 }
 
 export default List
