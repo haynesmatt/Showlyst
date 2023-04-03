@@ -6,8 +6,7 @@ function Card(card) {
 
   return (
     <div className="Card">
-      <h2 className='title'>{card.title}</h2>
-      <h3 className='stat'>{card.stat}</h3>
+      <h3 className='title'>{card.title}: {card.stat}</h3>
     </div>
   )
 }
