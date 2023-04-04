@@ -24,3 +24,23 @@
   text-align: center;
   border-radius: 30px;
 }
+
+/* unvisited link */
+a:link {
+  color: #fff3b0;
+}
+
+/* visited link */
+a:visited {
+  color: #fff3b0;
+}
+
+/* mouse over link */
+a:hover {
+  color: #fff3b0;
+}
+
+/* selected link */
+a:active {
+  color: #fff3b0;
+}

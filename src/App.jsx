@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Label} from "recharts";
 import './App.css'
 import Card from './Card.jsx'
 import List from './List.jsx'
 import axios from 'axios'
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Label} from "recharts";
+import { Link } from "react-router-dom";
 
 function App() {
 
@@ -39,7 +40,6 @@ function App() {
           setTotal(response.data.meta.total);
           setLowest(Math.min(...(response.data.events.map(dict => dict.stats.average_price)).filter(num => num !== null)));
           setHighest(Math.max(...(response.data.events.map(dict => dict.stats.average_price)).filter(num => num !== null)));
-          console.log(response.data.events.map(dict => dict.stats.average_price))
           const values = response.data.events.map(dict => dict.stats.average_price);
           const sum = values.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
           setAverage(sum / values.length)
@@ -63,7 +63,6 @@ function App() {
             }
           }
           setChartData(lod);
-          console.log(chartData);
       })
     }, [])
 
@@ -118,14 +117,15 @@ function App() {
       <List form={form} handleChange={handleChange} />
 
       {results.map((element, index) => (
+        <Link to={`/concertDetails/${element.id}`}>
           <div className='result'>
             <h2 className='artist'>{`Starring: ${element.performers[0].name}`}</h2>
             <h3 className='genre'>{`Genre: ${element.performers[0].genres != null ? element.performers[0].genres[0].name : `N/A`}`}</h3>
             <h3 className='location'>{`Location: ${element.venue.name}`}</h3>
             <h3 className='ticket-price'>{`Tickets start at $${element.stats.lowest_price}`}</h3>
           </div>
+      </Link>
       ))}
-    
     </div>
   )
 }
