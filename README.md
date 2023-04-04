@@ -1,10 +1,37 @@
-# Web Development Project 5 - *Showlyst*
+# Web Development Project 5 & 6 - *Showlyst*
 
 Submitted by: **Matthew Haynes**
 
 This web app: **a live concert data dashboard built with React and SeatGeek's API**
 
-Time spent: **5** hours spent in total
+Total time spent: **10** hours spent in total
+
+# Part 2
+
+## Required Features
+
+The following **required** functionality is completed:
+
+- [X] **The app includes at least two unique chart developed using the fetched data that tell an interesting story**
+- [X] **Clicking on an item in the list view displays more details about it**
+- [X] **Clicking on an item has a direct, unique link to that item's detail view page**
+
+
+The following **optional** features are implemented:
+
+- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
+- [ ] The site allows users to toggle between different data visualizations
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='http://g.recordit.co/66zNAUOpEC.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with RecordIt
+
+# Part 1
 
 ## Required Features
 
